@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Top Bar -->
+      <div class="topbar">
+          <div class="logo">
+              <h1>FilmHub</h1>
+          </div>
+          <div class="search-container">
+              <input type="text" placeholder="Search" class="search-input">
+              <button class="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="user-account">
+              <div class="user-button" onclick="toggleDropdown()">
+                  <i class="fas fa-user"></i>
+              </div>
+              <div class="dropdown-menu" id="accountDropdown">
+                  <?php
+                  $isLoggedIn = false;
+                  
+                  if ($isLoggedIn) {
+                      echo '<a href="#">Moje konto</a>';
+                      echo '<a href="#">Ustawienia</a>';
+                      echo '<a href="#">Wyloguj</a>';
+                  } else {
+                      echo '<a href="#">Zaloguj</a>';
+                      echo '<a href="#">Zarejestruj</a>';
+                  }
+                  ?>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-container">
+        <div class="glass-card">
+          <form class="artist-form">
+            <div class="form-columns">
+              <div class="column">
+                <input type="text" name="pseudonym" placeholder="Nickname" class="input-field">
+                <input type="text" name="fullname" placeholder="Name" class="input-field">
+                <input type="text" name="fullname" placeholder="Surname" class="input-field">
+                <input type="email" name="email" placeholder="E-mail" class="input-field">
+                <input type="tel" name="phone" placeholder="Telephone number" class="input-field">
+              </div>
+              <div class="column">
+                <input type="text" name="country" placeholder="Country" class="input-field">
+                <input type="text" name="fullname" placeholder="Płeć" class="input-field">
+                <input type="text" name="genre" placeholder="What's your favorite movie genre?" class="input-field">
+                <textarea name="description" placeholder="Write about yourself" class="input-field" rows="5"></textarea>
+              </div>
+              <button type="submit" class="ask-button">Log In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+
+      <!-- Footer -->
+      <div class="footer">
+          <p>We are always ready to help you.</p>
+          <button class="ask-button">Ask a question</button>
+      </div>
+    </div>
+    
+    <script>
+      function toggleDropdown() {
+          var dropdown = document.getElementById("accountDropdown");
+          dropdown.classList.toggle("show");
+      }
+
+      // Zamykanie dropdown menu po kliknięciu poza nim
+      window.onclick = function(event) {
+          if (!event.target.matches('.user-button') && !event.target.matches('.fa-user')) {
+              var dropdown = document.getElementById("accountDropdown");
+              if (dropdown.classList.contains('show')) {
+                  dropdown.classList.remove('show');
+              }
+          }
+      }
+  </script>
+</body>
+</html>
