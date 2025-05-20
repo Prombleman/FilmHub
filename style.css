@@ -1,3 +1,415 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
-    background-color: bisque;
+    background-color: #272727;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Bar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #978A74;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    background-color: #3f3f3f;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 300px;
+}
+
+.search-input {
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    flex-grow: 1;
+    outline: none;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.user-account {
+    position: relative;
+}
+
+.user-button {
+    background-color: #978A74;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #222;
+    border-radius: 5px;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333;
+}
+
+/* Featured Movie */
+.featured-movie {
+    display: flex;
+    margin: 30px 0;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.featured-info {
+    padding: 30px;
+    flex: 1;
+}
+
+.featured-info h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.featured-info .seasons {
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.featured-info .cast,
+.featured-info .genre {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.featured-info .description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #bbb;
+}
+
+.featured-image {
+    flex: 1;
+    position: relative;
+}
+
+.featured-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-dots {
+    display: flex;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #555;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+.next-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Section Styling */
+.section {
+    margin: 40px 0;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slider-arrow {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+
+.slider-arrow.left {
+    left: 10px;
+}
+
+.slider-arrow.right {
+    right: 10px;
+}
+
+.movie-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    gap: 20px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.movie-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.movie-card {
+    min-width: 200px;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    color: #888;
+    font-size: 12px;
+}
+
+.play-button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background-color: #978A74;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid #978A74;
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.ask-button {
+    background-color: #978A74;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Placeholder dla zdjęć */
+.placeholder-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #9c0202;
+    position: relative;
+}
+
+/* Specyficzne kolory dla każdego placeholdera */
+.featured-movie .placeholder-image {
+    background-color: #8e44ad; /* Fioletowy */
+}
+
+.movie-slider .movie-card:nth-child(1) .placeholder-image {
+    background-color: #27ae60; /* Zielony */
+}
+
+.movie-slider .movie-card:nth-child(2) .placeholder-image {
+    background-color: #e74c3c; /* Czerwony */
+}
+
+.movie-slider .movie-card:nth-child(3) .placeholder-image {
+    background-color: #f39c12; /* Pomarańczowy */
+}
+
+.movie-slider .movie-card:nth-child(4) .placeholder-image {
+    background-color: #2ecc71; /* Jasnozielony */
+}
+
+.movie-slider .movie-card:nth-child(5) .placeholder-image {
+    background-color: #c0392b; /* Ciemnoczerwony */
+}
+
+/* Komentarze dla zdjęć */
+.placeholder-image::before {
+    content: attr(data-image-label);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+.featured-movie .placeholder-image::before {
+    content: "Zdjęcie 1 - Featured Movie";
+}
+
+.movie-slider .movie-card:nth-child(1) .placeholder-image::before {
+    content: "Zdjęcie 2 - Fast & Furious";
+}
+
+.movie-slider .movie-card:nth-child(2) .placeholder-image::before {
+    content: "Zdjęcie 3 - Spider-man";
+}
+
+.movie-slider .movie-card:nth-child(3) .placeholder-image::before {
+    content: "Zdjęcie 4 - Doctor Strange";
+}
+
+.movie-slider .movie-card:nth-child(4) .placeholder-image::before {
+    content: "Zdjęcie 8 - The Matrix";
+}
+
+.movie-slider .movie-card:nth-child(5) .placeholder-image::before {
+    content: "Zdjęcie 9 - Inception";
+}
+
+/* Sekcja Comedy - inne kolory */
+.section:nth-of-type(2) .movie-card:nth-child(1) .placeholder-image {
+    background-color: #3498db; /* Niebieski */
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(2) .placeholder-image {
+    background-color: #9b59b6; /* Fioletowy */
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(3) .placeholder-image {
+    background-color: #16a085; /* Morski */
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(4) .placeholder-image {
+    background-color: #e67e22; /* Pomarańczowy */
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(5) .placeholder-image {
+    background-color: #1abc9c; /* Turkusowy */
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(1) .placeholder-image::before {
+    content: "Zdjęcie 5 - Spy";
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(2) .placeholder-image::before {
+    content: "Zdjęcie 6 - Pixels";
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(3) .placeholder-image::before {
+    content: "Zdjęcie 7 - Central Intelligence";
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(4) .placeholder-image::before {
+    content: "Zdjęcie 10 - The Hangover";
+}
+
+.section:nth-of-type(2) .movie-card:nth-child(5) .placeholder-image::before {
+    content: "Zdjęcie 11 - Superbad";
 }
