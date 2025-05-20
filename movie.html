@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FilmHub</title>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="container">
+    <!-- Menu (topbar) -->
+    <div class="topbar">
+      <div class="logo">
+        <h1><a href="main.html">FilmHub</a></h1>
+      </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search" class="search-input" />
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <div class="user-account">
+        <div class="user-button" onclick="toggleDropdown()">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="dropdown-menu" id="accountDropdown">
+          <!-- PHP generowane linki -->
+          <a href="#">Zaloguj</a>
+          <a href="#">Zarejestruj</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Główna zawartość -->
+    <div class="header">
+      <div class="thumbnail"></div>
+      <div class="details">
+        <h1>Lorem Ipsum Movie Title</h1>
+        <p id="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing.
+          <span id="moreText">
+            Vivamus lacinia odio vitae vestibulum vestibulum. Curabitur euismod, nunc vel consectetur cursus, nisl erat ullamcorper odio, in fringilla orci tortor a nulla.Vivamus lacinia odio vitae vestibulum vestibulum. Curabitur euismod, nunc vel consectetur cursus, nisl erat ullamcorper odio, in fringilla orci tortor a nulla.Vivamus lacinia odio vitae vestibulum vestibulum. Curabitur euismod, nunc vel consectetur cursus, nisl erat ullamcorper odio, in fringilla orci tortor a nulla.
+          </span>
+        </p>
+        <button class="button" id="viewAllBtn">View All</button>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div>
+        <p><strong>Year of release:</strong> Lorem</p>
+        <p><strong>Directed by:</strong> Ipsum Dolor</p>
+        <p><strong>Category:</strong> Lorem</p>
+        <p><strong>Genre:</strong> Dolor</p>
+        <p><strong>Translation:</strong> Lorem, Ipsum</p>
+      </div>
+      <div>
+        <p>
+          <strong>Cast:</strong> Lorem, Ipsum, Dolor, Sit, Amet, Consectetur,
+          Adipiscing, Elit
+        </p>
+      </div>
+    </div>
+
+    <div class="video-player">
+      <div class="playfilm-button"></div>
+    </div>
+
+    <div class="comments">
+        <input type="text" placeholder="Enter Comment" />
+        <button class="send-button">Send</button>
+      </div>
+      
+
+    <!-- You might like to watch -->
+    <div class="section">
+        <h2 class="section-title">You might like to watch</h2>
+        <div class="slider-container">
+            <button class="slider-arrow left"><i class="fas fa-chevron-left"></i></button>
+            <div class="movie-slider">
+                <!-- Zdjęcie 2 - Fast & Furious -->
+                <div class="movie-card">
+                  <div class="placeholder-image">
+                      <!-- Zdjęcie 2 - Fast & Furious -->
+                  </div>
+                  <div class="movie-info">
+                    <h3>Fast & Furious (2001)</h3>
+                    <p>127 min</p>
+                    <a href="movie.html">
+                      <div class="play-button">
+                        <i class="fas fa-play"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                
+                <!-- Zdjecie 3 - Spider-man -->
+                <div class="movie-card">
+                    <div class="placeholder-image">
+                        <!-- Zdjecie 3 - Spider-man -->
+                    </div>
+                    <div class="movie-info">
+                        <h3>Spider-man (... 2021)</h3>
+                        <p>148 min</p>
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <!-- Zdjecie 4 - Doctor Strange -->
+                <div class="movie-card">
+                    <div class="placeholder-image">
+                        <!-- Zdjecie 4 - Doctor Strange -->
+                    </div>
+                    <div class="movie-info">
+                        <h3>Doctor Strange (2016)</h3>
+                        <p>115 min</p>
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-arrow right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>We are always ready to help you.</p>
+      <button class="ask-button">Ask a question</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("accountDropdown");
+      dropdown.classList.toggle("show");
+    }
+
+    // Zamykanie dropdown menu po kliknięciu poza nim
+    window.onclick = function (event) {
+      if (
+        !event.target.matches(".user-button") &&
+        !event.target.matches(".fa-user")
+      ) {
+        var dropdown = document.getElementById("accountDropdown");
+        if (dropdown.classList.contains("show")) {
+          dropdown.classList.remove("show");
+        }
+      }
+    };
+
+    const btn = document.getElementById('viewAllBtn');
+    const moreText = document.getElementById('moreText');
+
+    btn.addEventListener('click', () => {
+    if (moreText.classList.contains('show')) {
+        moreText.classList.remove('show');
+        btn.textContent = 'View All';
+    } else {
+        moreText.classList.add('show');
+        btn.textContent = 'View Less';
+    }
+    });
+
+  </script>
+</body>
+</html>

@@ -26,7 +26,7 @@
               </div>
               <div class="dropdown-menu" id="accountDropdown">
                   <?php
-                  $isLoggedIn = false; // Zmień na true, aby zasymulować zalogowanego użytkownika
+                  $isLoggedIn = false;
                   
                   if ($isLoggedIn) {
                       echo '<a href="#">Moje konto</a>';
@@ -79,15 +79,20 @@
               <div class="movie-slider">
                   <!-- Zdjęcie 2 - Fast & Furious -->
                   <div class="movie-card">
-                      <div class="placeholder-image">
-                          <!-- Zdjecie 2 - Fast & Furious -->
-                      </div>
-                      <div class="movie-info">
-                          <h3>Fast & Furious (2001)</h3>
-                          <p>127 min</p>
-                          <div class="play-button"><i class="fas fa-play"></i></div>
-                      </div>
+                    <div class="placeholder-image">
+                        <!-- Zdjęcie 2 - Fast & Furious -->
+                    </div>
+                    <div class="movie-info">
+                      <h3>Fast & Furious (2001)</h3>
+                      <p>127 min</p>
+                      <a href="movie.html">
+                        <div class="play-button">
+                          <i class="fas fa-play"></i>
+                        </div>
+                      </a>
+                    </div>
                   </div>
+                  
                   <!-- Zdjecie 3 - Spider-man -->
                   <div class="movie-card">
                       <div class="placeholder-image">
