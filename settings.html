@@ -14,7 +14,7 @@
       <!-- Top Bar -->
       <div class="topbar">
           <div class="logo">
-              <h1>FilmHub</h1>
+            <h1><a href="main.html">FilmHub</a></h1>
           </div>
           <div class="search-container">
               <input type="text" placeholder="Search" class="search-input">
@@ -25,21 +25,74 @@
                   <i class="fas fa-user"></i>
               </div>
               <div class="dropdown-menu" id="accountDropdown">
-                  <?php
-                  $isLoggedIn = false;
-                  
-                  if ($isLoggedIn) {
-                      echo '<a href="#">Moje konto</a>';
-                      echo '<a href="#">Ustawienia</a>';
-                      echo '<a href="#">Wyloguj</a>';
-                  } else {
-                      echo '<a href="#">Zaloguj</a>';
-                      echo '<a href="#">Zarejestruj</a>';
-                  }
-                  ?>
+                <!-- PHP generowane linki -->
+                <a href="settings.html">Settings</a>
+                <a href="#">Log out</a>
               </div>
+              
           </div>
       </div>
+
+      <!-- User Stats Section -->
+      <div class="user-stats">
+        <div class="stat-box">
+          <i class="fas fa-clock"></i>
+          <div class="stat-text">
+              <h3>Time spent watching</h3>
+              <p>52:35:12</p>
+          </div>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-film"></i>
+          <div class="stat-text">
+              <h3>Films watched</h3>
+              <p>87</p>
+          </div>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-tv"></i>
+          <div class="stat-text">
+              <h3>Series watched</h3>
+              <p>34</p>
+          </div>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-star"></i>
+          <div class="stat-text">
+              <h3>Top genre</h3>
+              <p>Drama</p>
+          </div>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-chart-line"></i>
+          <div class="stat-text">
+              <h3>Total ratings given</h3>
+              <p>112</p>
+          </div>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-thumbs-up"></i>
+          <div class="stat-text">
+              <h3>Most liked film</h3>
+              <p>Inception</p>
+          </div>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-calendar-alt"></i>
+          <div class="stat-text">
+              <h3>Longest binge session</h3>
+              <p>8h 27m</p>
+          </div>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-trophy"></i>
+          <div class="stat-text">
+              <h3>Most watched director</h3>
+              <p>Christopher Nolan</p>
+          </div>
+        </div>
+      </div>
+      
 
       <div class="form-container">
         <div class="glass-card">
