@@ -572,14 +572,19 @@
   }
 
   .ask-button {
-    background-color: #978A74;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-  }
+  background-color: #978A74;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+
+  display: block;
+  margin: 40px auto 0 auto; /* wyśrodkowanie */
+  text-align: center;
+}
+
 
   /* Placeholder */
   .placeholder-image {
