@@ -10,6 +10,10 @@
   />
   <link
     rel="stylesheet"
+    href="main.css"
+  />
+  <link
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
 </head>
@@ -90,56 +94,66 @@
     <div class="section">
         <h2 class="section-title">You might like to watch</h2>
         <div class="slider-container">
-            <button class="slider-arrow left"><i class="fas fa-chevron-left"></i></button>
-            <div class="movie-slider">
-                <!-- Zdjęcie 2 - Fast & Furious -->
-                <div class="movie-card">
-                  <div class="placeholder-image">
-                      <!-- Zdjęcie 2 - Fast & Furious -->
-                  </div>
-                  <div class="movie-info">
-                    <h3>Fast & Furious (2001)</h3>
-                    <p>127 min</p>
-                    <a href="movie.html">
-                      <div class="play-button">
-                        <i class="fas fa-play"></i>
+          <button class="slider-arrow left-arrow">❮</button>
+          <div class="movie-slider">
+              <div class="movie-card">
+                  <div class="placeholder-image" style="background-color: #e74c3c;">
+                      <div class="movie-info">
+                          <h3>Fast & Furious (2001)</h3>
+                          <p>127 min</p>
                       </div>
-                    </a>
+                      <a href="movie.html" class="play-button"></a>
                   </div>
-                </div>
-                
-                <!-- Zdjecie 3 - Spider-man -->
-                <div class="movie-card">
-                    <div class="placeholder-image">
-                        <!-- Zdjecie 3 - Spider-man -->
-                    </div>
-                    <div class="movie-info">
-                        <h3>Spider-man (... 2021)</h3>
-                        <p>148 min</p>
-                        <div class="play-button"><i class="fas fa-play"></i></div>
-                    </div>
-                </div>
-                <!-- Zdjecie 4 - Doctor Strange -->
-                <div class="movie-card">
-                    <div class="placeholder-image">
-                        <!-- Zdjecie 4 - Doctor Strange -->
-                    </div>
-                    <div class="movie-info">
-                        <h3>Doctor Strange (2016)</h3>
-                        <p>115 min</p>
-                        <div class="play-button"><i class="fas fa-play"></i></div>
-                    </div>
-                </div>
-            </div>
-            <button class="slider-arrow right"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
+              </div>
+              <div class="movie-card">
+                  <div class="placeholder-image" style="background-color: #2ecc71;">
+                      <div class="movie-info">
+                          <h3>Avengers (2012)</h3>
+                          <p>143 min</p>
+                      </div>
+                      <button class="play-button"></button>
+                  </div>
+              </div>
+              <div class="movie-card">
+                  <div class="placeholder-image" style="background-color: #3498db;">
+                      <div class="movie-info">
+                          <h3>Barbie (2023)</h3>
+                          <p>114 min</p>
+                      </div>
+                      <button class="play-button"></button>
+                  </div>
+              </div>
+              <div class="movie-card">
+                  <div class="placeholder-image" style="background-color: #f1c40f;">
+                      <div class="movie-info">
+                          <h3>Shrek (2001)</h3>
+                          <p>90 min</p>
+                      </div>
+                      <button class="play-button"></button>
+                  </div>
+              </div>
+              <div class="movie-card">
+                  <div class="placeholder-image" style="background-color: #c0392b;">
+                      <div class="movie-info">
+                          <h3>Inception (2010)</h3>
+                          <p>148 min</p>
+                      </div>
+                      <button class="play-button"></button>
+                  </div>
+              </div>
+          </div>
+          <button class="slider-arrow right-arrow">❯</button>
+      </div>
+  </section>
+
+  <!-- Comedy Section -->
+  
 
     <!-- Footer -->
     <div class="footer">
       <p>We are always ready to help you.</p>
       <button class="ask-button">Ask a question</button>
-    </div>
+  </div>
   </div>
 
   <script>
