@@ -37,7 +37,7 @@
         <div class="dropdown-menu" id="accountDropdown">
           <!-- PHP generowane linki -->
           <a href="settings.html">Settings</a>
-          <a href="#">Log out</a>
+          <a href="#" id="loginLink">Log in</a>
         </div>
       </div>
     </div>
@@ -46,19 +46,14 @@
     <div class="header">
       <div class="thumbnail"></div>
       <div class="details">
-        <h1>Lorem Ipsum Movie Title</h1>
+        <h1>Movie Title</h1><br></br>
         <p id="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
           <span id="moreText">
             Vivamus lacinia odio vitae vestibulum vestibulum. Curabitur euismod, nunc vel consectetur cursus, nisl erat ullamcorper odio, in fringilla orci tortor a nulla.Vivamus lacinia odio vitae vestibulum vestibulum. Curabitur euismod, nunc vel consectetur cursus, nisl erat ullamcorper odio, in fringilla orci tortor a nulla.Vivamus lacinia odio vitae vestibulum vestibulum. Curabitur euismod, nunc vel consectetur cursus, nisl erat ullamcorper odio, in fringilla orci tortor a nulla.
           </span>
         </p>
-        <button class="button" id="viewAllBtn">View All</button>
+        <button class="button" id="viewAllBtn">View more</button>
     
         <!-- Przeniesiony div info-grid tutaj -->
         <div class="info-grid">
@@ -146,7 +141,31 @@
       </div>
   </section>
 
-  <!-- Comedy Section -->
+  <div class="form-overlay" id="formOverlay">
+    <div class="form-container">
+      <div class="glass-card">
+        <button class="close-btn" id="closeFormBtn">&times;</button>
+        <form class="artist-form">
+          <div class="form-columns">
+            <div class="column">
+              <input type="text" name="pseudonym" placeholder="Nickname" class="input-field" />
+              <input type="text" name="fullname" placeholder="Name" class="input-field" />
+              <input type="text" name="surname" placeholder="Surname" class="input-field" />
+              <input type="email" name="email" placeholder="E-mail" class="input-field" />
+              <input type="tel" name="phone" placeholder="Telephone number" class="input-field" />
+            </div>
+            <div class="column">
+              <input type="text" name="country" placeholder="Country" class="input-field" />
+              <input type="text" name="gender" placeholder="Płeć" class="input-field" />
+              <input type="text" name="genre" placeholder="Favorite movie genre" class="input-field" />
+              <textarea name="description" placeholder="Write about yourself" class="input-field" rows="5"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="ask-button">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
   
 
     <!-- Footer -->
@@ -181,13 +200,30 @@
     btn.addEventListener('click', () => {
     if (moreText.classList.contains('show')) {
         moreText.classList.remove('show');
-        btn.textContent = 'View All';
+        btn.textContent = 'View more';
     } else {
         moreText.classList.add('show');
-        btn.textContent = 'View Less';
+        btn.textContent = 'View less';
     }
     });
+    const loginLink = document.getElementById('loginLink');
+    const formOverlay = document.getElementById('formOverlay');
+    const closeFormBtn = document.getElementById('closeFormBtn');
+   
+    loginLink.addEventListener('click', (e) => {
+      e.preventDefault();      // blokujemy domyślną akcję linku (przejście)
+      formOverlay.style.display = 'flex';
+          });
 
+    closeFormBtn.addEventListener('click', () => {
+       formOverlay.style.display = 'none';
+     });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === formOverlay) {
+        formOverlay.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
