@@ -28,8 +28,8 @@
               <div class="dropdown-menu" id="accountDropdown">
                 <!-- PHP generowane linki -->
                 <a href="settings.html">Settings</a>
-                <a href="#" id="loginLink">Log in</a>
-              </div>
+                <a href="#" id="loginLink">Prześlij Film</a>
+                <a href="#" id="logoutLink" style="color: #e74c3c;">Wyloguj</a>              </div>
               
           </div>
       </div>
@@ -47,14 +47,14 @@
           <i class="fas fa-film"></i>
           <div class="stat-text">
               <h3>Films watched</h3>
-              <p>87</p>
+              <p>21</p>
           </div>
         </div>
         <div class="stat-box">
           <i class="fas fa-tv"></i>
           <div class="stat-text">
               <h3>Series watched</h3>
-              <p>34</p>
+              <p>37</p>
           </div>
         </div>
         <div class="stat-box">
@@ -95,62 +95,58 @@
       </div>
 
       <!-- Films you watched -->
-    <div class="section">
-      <h2 class="section-title">Films you watched</h2>
-      <div class="slider-container">
-        <button class="slider-arrow left-arrow">❮</button>
-        <div class="movie-slider">
-            <div class="movie-card">
-                <div class="placeholder-image" style="background-color: #e74c3c;">
-                    <div class="movie-info">
-                        <h3>Fast & Furious (2001)</h3>
-                        <p>127 min</p>
+      <section class="section">
+        <h2>Last watched</h2>
+        <div class="slider-container">
+            <div class="movie-slider">
+                <a href="fast-furious.html" class="movie-card">
+                    <div class="placeholder-image" style="background-color: #e74c3c;">
+                        <div class="movie-info">
+                            <h3>Fast & Furious (2001)</h3>
+                            <p>127 min</p>
+                            <p class="movie-description">Dom and his crew must take on an international terrorist who turns out to be Dom and Mia's estranged brother.</p>
+                        </div>
                     </div>
-                    <a href="movie.html" class="play-button"></a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="placeholder-image" style="background-color: #2ecc71;">
-                    <div class="movie-info">
-                        <h3>Avengers (2012)</h3>
-                        <p>143 min</p>
+                </a>
+                <a href="avengers.html" class="movie-card">
+                    <div class="placeholder-image" style="background-color: #2ecc71;">
+                        <div class="movie-info">
+                            <h3>Avengers (2012)</h3>
+                            <p>143 min</p>
+                            <p class="movie-description">Earth's mightiest heroes must come together and learn to fight as a team to stop the mischievous Loki and his alien army.</p>
+                        </div>
                     </div>
-                    <button class="play-button"></button>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="placeholder-image" style="background-color: #3498db;">
-                    <div class="movie-info">
-                        <h3>Barbie (2023)</h3>
-                        <p>114 min</p>
+                </a>
+                <a href="barbie.html" class="movie-card">
+                    <div class="placeholder-image" style="background-color: #3498db;">
+                        <div class="movie-info">
+                            <h3>Barbie (2023)</h3>
+                            <p>114 min</p>
+                            <p class="movie-description">Barbie suffers a crisis that leads her to question her world and her existence.</p>
+                        </div>
                     </div>
-                    <button class="play-button"></button>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="placeholder-image" style="background-color: #f1c40f;">
-                    <div class="movie-info">
-                        <h3>Shrek (2001)</h3>
-                        <p>90 min</p>
+                </a>
+                <a href="shrek.html" class="movie-card">
+                    <div class="placeholder-image" style="background-color: #f1c40f;">
+                        <div class="movie-info">
+                            <h3>Shrek (2001)</h3>
+                            <p>90 min</p>
+                            <p class="movie-description">A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess.</p>
+                        </div>
                     </div>
-                    <button class="play-button"></button>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="placeholder-image" style="background-color: #c0392b;">
-                    <div class="movie-info">
-                        <h3>Inception (2010)</h3>
-                        <p>148 min</p>
+                </a>
+                <a href="inception.html" class="movie-card">
+                    <div class="placeholder-image" style="background-color: #c0392b;">
+                        <div class="movie-info">
+                            <h3>Inception (2010)</h3>
+                            <p>148 min</p>
+                            <p class="movie-description">A thief who enters people's dreams and steals their secrets from their subconscious gets the chance to have his criminal record erased.</p>
+                        </div>
                     </div>
-                    <button class="play-button"></button>
-                </div>
+                </a>
             </div>
         </div>
-        <button class="slider-arrow right-arrow">❯</button>
-    </div>
-</section>
-      
-
+    </section>
 
 
 <div class="form-overlay" id="formOverlay">
@@ -168,11 +164,24 @@
           </div>
           <div class="column">
             <input type="text" name="country" placeholder="Country" class="input-field" />
-            <input type="text" name="gender" placeholder="Płeć" class="input-field" />
+            <input type="text" name="gender" placeholder="Gender" class="input-field" />
             <input type="text" name="genre" placeholder="Favorite movie genre" class="input-field" />
-            <textarea name="description" placeholder="Write about yourself" class="input-field" rows="5"></textarea>
+            <textarea name="description" placeholder="Write about yourself" class="input-field if-description" rows="5"></textarea>
           </div>
         </div>
+        <div class="file-upload-section">
+          <div class="file-upload-container" id="fileUploadContainer">
+              <input type="file" name="portfolio" class="file-upload-input" id="fileInput" accept="image/*,.pdf,.doc,.docx" />
+              <div class="file-upload-content">
+                  <div class="file-upload-icon">📁</div>
+                  <div class="file-upload-text">Click to upload or drag and drop</div>
+                  <div class="file-upload-subtext">Images, PDF, DOC files (max 10MB)</div>
+              </div>
+              <div class="file-selected" id="fileSelected">
+                  <span id="fileName"></span>
+              </div>
+          </div>
+      </div>
         <button type="submit" class="ask-button">Send</button>
       </form>
     </div>
@@ -181,12 +190,12 @@
 
       
 
-      <!-- Footer -->
-      <div class="footer">
-          <p>We are always ready to help you.</p>
-          <button class="ask-button">Ask a question</button>
-      </div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>We are always ready to help you.</p>
+        <button class="ask-button">Ask a question</button>
     </div>
+  </div>
     
     <script>
       function toggleDropdown() {
